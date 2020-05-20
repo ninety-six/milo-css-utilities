@@ -1,0 +1,6 @@
+// Image
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@if mixin-exists(img-fluid) {
+    .img-fluid { @include img-fluid; }
+}

@@ -1,0 +1,39 @@
+// Visibility
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Map variable
+$viewport-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// Creates hidden helpers for each breakpoint
+//      .hidden-sm {...}
+//      .hidden-sm-up {...}
+//      .hidden-sm-down {...}
+@each $bp in map-keys($viewport-breakpoints) {
+    @if mixin-exists(media-breakpoint-up) {
+        .hidden-#{$bp}-up {
+            @include media-breakpoint-up($bp) {
+                display: none !important; // stylelint-disable-line declaration-no-important
+            }
+        }
+    }
+    @if mixin-exists(media-breakpoint-down) {
+        .hidden-#{$bp}-down {
+            @include media-breakpoint-down($bp) {
+                display: none !important; // stylelint-disable-line declaration-no-important
+            }
+        }
+    }
+    @if mixin-exists(media-breakpoint-only) {
+        .hidden-#{$bp} {
+            @include media-breakpoint-only($bp) {
+                display: none !important; // stylelint-disable-line declaration-no-important
+            }
+        }
+    }
+}

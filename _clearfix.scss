@@ -1,0 +1,6 @@
+// Clearfix
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@if mixin-exists(clearfix) {
+    .clearfix { @include clearfix; }
+}

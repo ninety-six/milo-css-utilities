@@ -1,0 +1,27 @@
+// Color
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Map variable
+$colors: () !default;
+$colors: map-merge(
+    (
+        // Required base colours
+        "white":                rgb(255, 255, 255),
+        "black":                rgb(17, 17, 17),
+        "primary":              rgb(10, 211, 255),
+        "secondary":            rgb(235, 236, 238)
+    ),
+    $colors
+);
+
+// Creates color helpers for each color
+//      .b-primary {...}
+//      .c-primary {...}
+@each $name, $color in $colors {
+    .b-#{$name} {
+        background-color: $color;
+    }
+    .c-#{$name} {
+        color: $color;
+    }
+}

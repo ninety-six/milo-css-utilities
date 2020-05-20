@@ -1,0 +1,13 @@
+// Sizing
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.full-height { height: 100%; }
+.full-viewport-height { height: 100vh; }
+.full-width {
+    box-sizing: border-box;
+    width: 100%;
+}
+.full-max-width {
+    box-sizing: border-box;
+    max-width: 100%;
+}
