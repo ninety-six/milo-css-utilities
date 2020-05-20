@@ -1,0 +1,57 @@
+{
+    "name": "@milo-css/utilities",
+    "version": "1.0.0",
+    "description": "An array of CSS Utility classes to be used in your Milo CSS-based framework.",
+    "keywords": [
+        "css",
+        "utilities",
+        "system",
+        "responsive",
+        "framework"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "src-build": "npm-run-all --parallel css-lint* css-compile* --sequential css-prefix* css-minify*",
+        "css-lint": "stylelint --syntax scss \"*.scss\"",
+        "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 _import.scss dist/utilities.css",
+        "css-prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+        "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/utilities.min.css dist/utilities.css",
+        "watch-css": "nodemon --ignore dist/ -e scss -x \"npm run src-build\""
+    },
+    "author": "ninety-six <benhall.ninetysix@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ninety-six/milo-css-utilities.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ninety-six/milo-css-utilities/issues"
+    },
+    "homepage": "https://github.com/ninety-six/milo-css-utilities#readme",
+    "devDependencies": {
+        "autoprefixer": "^9.7.5",
+        "clean-css-cli": "^4.3.0",
+        "node-sass": "^4.13.1",
+        "nodemon": "^2.0.2",
+        "npm-run-all": "^4.1.5",
+        "postcss-cli": "^7.1.0",
+        "postcss-discard-comments": "^4.0.2",
+        "stylelint": "^13.3.0",
+        "stylelint-config-recommended-scss": "^4.2.0",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-order": "^4.0.0",
+        "stylelint-scss": "^3.16.0"
+    },
+    "browserslist": [
+        "last 1 major version",
+        ">= 1%",
+        "Chrome >= 45",
+        "Firefox >= 38",
+        "Edge >= 12",
+        "Explorer >= 10",
+        "iOS >= 9",
+        "Safari >= 9",
+        "Android >= 4.4",
+        "Opera >= 30"
+    ]
+}
