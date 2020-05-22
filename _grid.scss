@@ -2,10 +2,10 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // use in conjunction with .d-grid to align the grid items along the inline (row) axis
-.grid-justify-items-start       { align-items: start; }
-.grid-justify-items-end         { align-items: end; }
-.grid-justify-items-center      { align-items: center; }
-.grid-justify-items-stretch     { align-items: stretch; }
+.grid-justify-items-start       { justify-items: start; }
+.grid-justify-items-end         { justify-items: end; }
+.grid-justify-items-center      { justify-items: center; }
+.grid-justify-items-stretch     { justify-items: stretch; }
 
 // use in conjunction with .d-grid to align the grid items along the block (column) axis
 .grid-align-items-start         { align-items: start; }

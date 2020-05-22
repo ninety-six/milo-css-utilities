@@ -54,8 +54,8 @@ $spacers: (
 .mb-auto                    { margin-bottom: auto; }
 .ml-auto                    { margin-left: auto; }
 
-@if mixin-exists(push--auto) {
-    .push-auto { @include push--auto; }
-}
-
 .padding-zero               { padding: 0; }
+
+@if mixin-exists(push-auto) {
+    .push-auto { @include push-auto; }
+}
