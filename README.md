@@ -330,7 +330,7 @@ $viewport-breakpoints: (
 The variables above will compile to generate the following classes:
 
 | Class | Description | Note |
-|---|---|
+|---|---|---|
 | ```hidden-xs``` | Hide this element on the xs breakpoint only | Requires ```media-breakpoint-only()``` mixin thats part of ```@milo-css/grid``` module |
 | ```hidden-sm``` | Hide this element on the sm breakpoint only | Requires ```media-breakpoint-only()``` mixin thats part of ```@milo-css/grid``` module |
 | ```hidden-md``` | Hide this element on the md breakpoint only | Requires ```media-breakpoint-only()``` mixin thats part of ```@milo-css/grid``` module |
