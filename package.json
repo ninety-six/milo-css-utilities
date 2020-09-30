@@ -1,6 +1,6 @@
 {
     "name": "@milo-css/utilities",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An array of CSS Utility classes to be used in your Milo CSS-based framework.",
     "keywords": [
         "css",
