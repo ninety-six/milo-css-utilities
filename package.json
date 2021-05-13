@@ -1,6 +1,6 @@
 {
     "name": "@milo-css/utilities",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "An array of CSS Utility classes to be used in your Milo CSS-based framework.",
     "keywords": [
         "css",
@@ -10,13 +10,13 @@
         "framework"
     ],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "src-build": "npm-run-all --parallel css-lint* css-compile* --sequential css-prefix* css-minify*",
         "css-lint": "stylelint --syntax scss \"*.scss\"",
         "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 _import.scss dist/utilities.css",
         "css-prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
-        "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/utilities.min.css dist/utilities.css",
-        "watch-css": "nodemon --ignore dist/ -e scss -x \"npm run src-build\""
+        "css-minify": "cleancss --with-rebase --input-source-map dist/utilities.css.map --output dist/utilities.min.css dist/utilities.css",
+        "css-build": "npm-run-all --parallel css-lint* css-compile* --sequential css-prefix* css-minify*",
+        "scss-watch": "nodemon --ignore dist/ -e scss -x \"npm run css-build\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "ninety-six <benhall.ninetysix@gmail.com>",
     "license": "MIT",
@@ -29,18 +29,19 @@
     },
     "homepage": "https://github.com/ninety-six/milo-css-utilities#readme",
     "devDependencies": {
-        "autoprefixer": "^9.7.5",
-        "clean-css-cli": "^4.3.0",
-        "node-sass": "^4.13.1",
-        "nodemon": "^2.0.2",
+        "autoprefixer": "^10.2.5",
+        "clean-css-cli": "^5.3.0",
+        "node-sass": "^6.0.0",
+        "nodemon": "^2.0.7",
         "npm-run-all": "^4.1.5",
-        "postcss-cli": "^7.1.0",
-        "postcss-discard-comments": "^4.0.2",
-        "stylelint": "^13.3.0",
+        "postcss": "^8.2.15",
+        "postcss-cli": "^8.3.1",
+        "postcss-discard-comments": "^5.0.0",
+        "stylelint": "^13.13.1",
         "stylelint-config-recommended-scss": "^4.2.0",
-        "stylelint-config-standard": "^20.0.0",
-        "stylelint-order": "^4.0.0",
-        "stylelint-scss": "^3.16.0"
+        "stylelint-config-standard": "^22.0.0",
+        "stylelint-order": "^4.1.0",
+        "stylelint-scss": "^3.19.0"
     },
     "browserslist": [
         "last 1 major version",
